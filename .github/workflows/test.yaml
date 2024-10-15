@@ -1,11 +1,11 @@
 name: Hola Mundo
 
-on: [push]
+on: 
+  push:
 
-jobs: 
+jobs:
   uno:
     runs-on: ubuntu-latest
-
     steps:
-    -name: Mensaje
-    run: echo "Hola Mundo"  
+      - name: Mensaje
+        run: echo "Hola Mundo"

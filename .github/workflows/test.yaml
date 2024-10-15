@@ -8,4 +8,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Mensaje
-        run: echo "Hola Mundo"
+        run: echo "Hola mundo!!!"  # Crea
+      - name: Touch File
+        run: |
+          touch hola.txt
+          ls -al
+      - name: Set text
+        run: |
+          echo "Hola mundo" >> hola.txt  # Agrega
+          ls -al
+      - name: Read File
+        run: cat hola.txt  # Lee
+
+  dos:
+    runs-on: ubuntu-latest
+    needs: [uno]
+    steps:
+      - name: Directorio
+        run: ls -al

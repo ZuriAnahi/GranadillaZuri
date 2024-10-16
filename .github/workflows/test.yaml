@@ -25,6 +25,11 @@ jobs:
     needs: [uno]
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2 #estamos dentro del repositorio
       - name: Directorio
-        run: ls -al
+        run: ls -al #Nos paso al repositorio
+
+      - name: Instalar
+        run: | #colocamos la direccion 
+          cd -github/workflows
+          ls -al

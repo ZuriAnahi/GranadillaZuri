@@ -1,35 +1,41 @@
 name: Hola Mundo
 
 on: 
-  push:
+push:
 
 jobs:
   uno:
     runs-on: ubuntu-latest
     steps:
       - name: Mensaje
-        run: echo "Hola mundo!!!"  # Crea
-      - name: Touch File
+        run: echo "Hola mundo!!!"
+        
+      - name: Touch file  # Crea
         run: |
           touch hola.txt
           ls -al
-      - name: Set text
+          
+      - name: Set text  # Agrega
         run: |
-          echo "Hola mundo" >> hola.txt  # Agrega
+          echo "Hola mundo" >> hola.txt
           ls -al
-      - name: Read File
-        run: cat hola.txt  # Lee
+          
+      - name: Read file  # Lee
+        run: |
+          cat hola.txt
+          ls -al
 
   dos:
     runs-on: ubuntu-latest
     needs: [uno]
     steps:
       - name: Checkout
-        uses: actions/checkout@v2 #estamos dentro del repositorio
+        uses: actions/checkout@v4.2.1
+        
       - name: Directorio
-        run: ls -al #Nos paso al repositorio
+        run: ls -al
 
       - name: Instalar
-        run: | #colocamos la direccion 
-          cd -github/workflows
+        run: |
+          cd .github/workflows
           ls -al

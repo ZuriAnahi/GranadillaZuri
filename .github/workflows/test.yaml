@@ -1,7 +1,7 @@
 name: Hola Mundo
 
 on: 
-push:
+  push:
 
 jobs:
   uno:
@@ -30,7 +30,7 @@ jobs:
     needs: [uno]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.1
+        uses: actions/checkout@v2  # Usar una versión válida
         
       - name: Directorio
         run: ls -al
